@@ -155,7 +155,22 @@ const states = [
 ];
 
 function App() {
-  return <div id="main"></div>;
+  return (
+    <div id="main">
+      <div>
+        {states.map((stateName, stateId) => {
+          return (
+            <StateDetails
+              stateVar={stateName}
+              stateName={stateName.name}
+              stateId={stateId}
+              key={stateId}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default App;
